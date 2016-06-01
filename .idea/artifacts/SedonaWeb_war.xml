@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SedonaWeb:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SedonaWeb-0.1.war">
+      <element id="artifact" artifact-name="SedonaWeb:war exploded" />
+    </root>
+  </artifact>
+</component>
