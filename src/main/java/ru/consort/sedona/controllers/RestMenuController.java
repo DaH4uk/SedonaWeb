@@ -5,23 +5,17 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
+import jakarta.servlet.http.HttpServletRequest;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriBuilder;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.*;
 
 /**
@@ -31,7 +25,7 @@ import java.util.*;
 @Controller
 public class RestMenuController {
 
-    @RequestMapping(value = "/rest/*", method = RequestMethod.GET)
+    @GetMapping( "/rest/*")
     public ModelAndView main(HttpServletRequest request) throws ParseException {
         ModelAndView modelAndView = new ModelAndView();
 
@@ -42,6 +36,7 @@ public class RestMenuController {
         WebResource service = client.resource(UriBuilder.fromUri("http://192.168.1.40:5555/").build());
         // getting JSON data
         String json = service.path("json").accept(MediaType.APPLICATION_JSON).get(String.class);
+
 
 
         JSONParser parser = new JSONParser();
@@ -96,7 +91,7 @@ public class RestMenuController {
 
         StringBuilder theadStrBldr = new StringBuilder();
 
-        Set set = new TreeSet<>();
+        Set<Object> set = new TreeSet<>();
         for (Object o : obj1) {
             ((JSONObject) o).keySet().forEach(set::add);
 

@@ -75,7 +75,7 @@ public class Test {
 //
 //        }
 
-        Set set = new TreeSet<>();
+        Set<Object> set = new TreeSet<>();
         for (Object o: obj1) {
             ((JSONObject) o).keySet().forEach(set::add);
 

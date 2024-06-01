@@ -14,10 +14,10 @@
         <jsp.version>2.2</jsp.version>
         <jstl.version>1.2</jstl.version>
         <servlet.version>3.1.0</servlet.version>
-        <spring-framework.version>4.2.6.RELEASE</spring-framework.version>
+        <spring-framework.version>6.1.8</spring-framework.version>
         <log4j.version>1.2.17</log4j.version>
         <slf4j.version>1.7.21</slf4j.version>
-        <logback.version>1.1.7</logback.version>
+        <logback.version>1.5.6</logback.version>
         <jersey-client.version>1.19.1</jersey-client.version>
         <javax-faces.version>2.2.10</javax-faces.version>
     </properties>
@@ -96,12 +96,14 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-            <scope>compile</scope>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
         </dependency>
+
 
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
