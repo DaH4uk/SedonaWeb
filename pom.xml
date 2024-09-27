@@ -14,7 +14,7 @@
         <jsp.version>2.2</jsp.version>
         <jstl.version>1.2</jstl.version>
         <servlet.version>3.1.0</servlet.version>
-        <spring-framework.version>6.1.8</spring-framework.version>
+        <spring-framework.version>6.1.13</spring-framework.version>
         <log4j.version>1.2.17</log4j.version>
         <slf4j.version>1.7.21</slf4j.version>
         <logback.version>1.5.6</logback.version>
